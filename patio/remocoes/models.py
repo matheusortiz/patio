@@ -26,13 +26,13 @@ class Liberacao(models.Model):
     criado_em = models.DateTimeField('Criado em', auto_now_add=True)
     atualizado_em = models.DateTimeField('Atualizado em', auto_now=True)
 
+    class Meta:
+        verbose_name = 'Liberação'
+        verbose_name_plural = 'Liberações'
+        ordering = ['data_liberacao']
+
     def __str__(self):
         return self.observacoes
-
-        class Meta:
-            verbose_name = 'Liberação'
-            verbose_name_plural = 'Liberações'
-
 
 class Remocao(models.Model):
     plaqueta = models.IntegerField('Plaqueta')
@@ -52,7 +52,7 @@ class Remocao(models.Model):
         upload_to='doc_remocao', verbose_name='Documento de Remoção')
     bloqueio_judicial = models.BooleanField('BJ', blank=True)
     liberacao = models.ForeignKey(
-        Liberacao, on_delete=models.CASCADE, null=True, blank=True)
+        Liberacao, on_delete=models.SET_NULL, null=True, blank=True)
     criado_em = models.DateTimeField('Criado em', auto_now_add=True)
     atualizado_em = models.DateTimeField('Atualizado em', auto_now=True)
 
