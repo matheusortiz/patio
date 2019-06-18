@@ -36,25 +36,25 @@ class Liberacao(models.Model):
 
 class Remocao(models.Model):
     plaqueta = models.IntegerField('Plaqueta')
-    placa = models.CharField('Placa', max_length=7)
-    uf = models.CharField('UF', max_length=2)
+    placa = models.CharField('Placa', max_length=7, blank=True)
+    uf = models.CharField('UF', max_length=2, blank=True)
     data_vistoria = models.DateField('Data de Vistoria')
     patio = models.ForeignKey(Patio, on_delete=models.CASCADE)
-    marca = models.CharField('Marca', max_length=300)
-    modelo = models.CharField('Modelo', max_length=300)
-    especie = models.CharField('Especie', max_length=300, blank=True)
-    tipo = models.CharField('Tipo', max_length=300, blank=True)
-    combustivel = models.CharField('Combustível', max_length=300, blank=True)
-    cor = models.CharField('Cor', max_length=300, blank=True)
+    marca = models.CharField('Marca', max_length=300, blank=True)
+    modelo = models.CharField('Modelo', max_length=300, blank=True)
+    especie = models.CharField('Especie', max_length=300, blank=True, null=True)
+    tipo = models.CharField('Tipo', max_length=300, blank=True, null=True)
+    combustivel = models.CharField('Combustível', max_length=300, blank=True, null=True)
+    cor = models.CharField('Cor', max_length=300, blank=True, null=True)
     chassi = models.CharField('Chassi', max_length=300, blank=True)
-    observacoes = models.TextField('Observações', blank=True)
+    observacoes = models.TextField('Observações', blank=True, null=True)
     documento_remocao = models.ImageField(
-        upload_to='doc_remocao', verbose_name='Documento de Remoção')
-    bloqueio_judicial = models.BooleanField('BJ', blank=True)
+        upload_to='doc_remocao', verbose_name='Documento de Remoção', null=True, blank=True)
+    bloqueio_judicial = models.BooleanField('BJ', blank=True, null=True)
     liberacao = models.ForeignKey(
         Liberacao, on_delete=models.SET_NULL, null=True, blank=True)
-    criado_em = models.DateTimeField('Criado em', auto_now_add=True)
-    atualizado_em = models.DateTimeField('Atualizado em', auto_now=True)
+    criado_em = models.DateTimeField('Criado em', auto_now_add=True, null=True)
+    atualizado_em = models.DateTimeField('Atualizado em', auto_now=True, null=True)
 
     def __str__(self):
         return self.placa
