@@ -1,0 +1,1190 @@
+[2019-06-27 12:40:15 +0000] [15502] [DEBUG] Current configuration:
+  config: None
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ortiz/www/patio
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ortiz/www/patio/logs/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: patio.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f5823a22f28>
+  on_reload: <function OnReload.on_reload at 0x7f5823a320d0>
+  when_ready: <function WhenReady.when_ready at 0x7f5823a321e0>
+  pre_fork: <function Prefork.pre_fork at 0x7f5823a322f0>
+  post_fork: <function Postfork.post_fork at 0x7f5823a32400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f5823a32510>
+  worker_int: <function WorkerInt.worker_int at 0x7f5823a32620>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f5823a32730>
+  pre_exec: <function PreExec.pre_exec at 0x7f5823a32840>
+  pre_request: <function PreRequest.pre_request at 0x7f5823a32950>
+  post_request: <function PostRequest.post_request at 0x7f5823a329d8>
+  child_exit: <function ChildExit.child_exit at 0x7f5823a32ae8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f5823a32bf8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f5823a32d08>
+  on_exit: <function OnExit.on_exit at 0x7f5823a32e18>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-06-27 12:40:15 +0000] [15502] [INFO] Starting gunicorn 19.9.0
+[2019-06-27 12:40:15 +0000] [15502] [DEBUG] Arbiter booted
+[2019-06-27 12:40:15 +0000] [15502] [INFO] Listening at: http://127.0.0.1:8000 (15502)
+[2019-06-27 12:40:15 +0000] [15502] [INFO] Using worker: sync
+[2019-06-27 12:40:15 +0000] [15508] [INFO] Booting worker with pid: 15508
+[2019-06-27 12:40:15 +0000] [15508] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+ModuleNotFoundError: No module named 'patio.wsgi'
+[2019-06-27 12:40:15 +0000] [15508] [INFO] Worker exiting (pid: 15508)
+[2019-06-27 12:40:15 +0000] [15509] [INFO] Booting worker with pid: 15509
+[2019-06-27 12:40:15 +0000] [15509] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+ModuleNotFoundError: No module named 'patio.wsgi'
+[2019-06-27 12:40:15 +0000] [15509] [INFO] Worker exiting (pid: 15509)
+[2019-06-27 12:40:15 +0000] [15502] [INFO] Shutting down: Master
+[2019-06-27 12:40:15 +0000] [15502] [INFO] Reason: Worker failed to boot.
+[2019-06-27 12:40:55 +0000] [15551] [DEBUG] Current configuration:
+  config: None
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ortiz/www/patio
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ortiz/www/patio/logs/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: patio.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f1954211f28>
+  on_reload: <function OnReload.on_reload at 0x7f19542210d0>
+  when_ready: <function WhenReady.when_ready at 0x7f19542211e0>
+  pre_fork: <function Prefork.pre_fork at 0x7f19542212f0>
+  post_fork: <function Postfork.post_fork at 0x7f1954221400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f1954221510>
+  worker_int: <function WorkerInt.worker_int at 0x7f1954221620>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f1954221730>
+  pre_exec: <function PreExec.pre_exec at 0x7f1954221840>
+  pre_request: <function PreRequest.pre_request at 0x7f1954221950>
+  post_request: <function PostRequest.post_request at 0x7f19542219d8>
+  child_exit: <function ChildExit.child_exit at 0x7f1954221ae8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f1954221bf8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f1954221d08>
+  on_exit: <function OnExit.on_exit at 0x7f1954221e18>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-06-27 12:40:55 +0000] [15551] [INFO] Starting gunicorn 19.9.0
+[2019-06-27 12:40:55 +0000] [15551] [DEBUG] Arbiter booted
+[2019-06-27 12:40:55 +0000] [15551] [INFO] Listening at: http://127.0.0.1:8000 (15551)
+[2019-06-27 12:40:55 +0000] [15551] [INFO] Using worker: sync
+[2019-06-27 12:40:55 +0000] [15557] [INFO] Booting worker with pid: 15557
+[2019-06-27 12:40:55 +0000] [15557] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+ModuleNotFoundError: No module named 'patio.wsgi'
+[2019-06-27 12:40:55 +0000] [15557] [INFO] Worker exiting (pid: 15557)
+[2019-06-27 12:40:55 +0000] [15558] [INFO] Booting worker with pid: 15558
+[2019-06-27 12:40:55 +0000] [15558] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ortiz/env/patio/lib/python3.7/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+ModuleNotFoundError: No module named 'patio.wsgi'
+[2019-06-27 12:40:55 +0000] [15558] [INFO] Worker exiting (pid: 15558)
+[2019-06-27 12:40:55 +0000] [15551] [DEBUG] 2 workers
+[2019-06-27 12:40:55 +0000] [15551] [INFO] Shutting down: Master
+[2019-06-27 12:40:55 +0000] [15551] [INFO] Reason: Worker failed to boot.
+[2019-06-27 12:52:33 +0000] [15727] [DEBUG] Current configuration:
+  config: None
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ortiz/www/patio/patio
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ortiz/www/patio/logs/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: patio.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fc9cffc4f28>
+  on_reload: <function OnReload.on_reload at 0x7fc9cffd50d0>
+  when_ready: <function WhenReady.when_ready at 0x7fc9cffd51e0>
+  pre_fork: <function Prefork.pre_fork at 0x7fc9cffd52f0>
+  post_fork: <function Postfork.post_fork at 0x7fc9cffd5400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fc9cffd5510>
+  worker_int: <function WorkerInt.worker_int at 0x7fc9cffd5620>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fc9cffd5730>
+  pre_exec: <function PreExec.pre_exec at 0x7fc9cffd5840>
+  pre_request: <function PreRequest.pre_request at 0x7fc9cffd5950>
+  post_request: <function PostRequest.post_request at 0x7fc9cffd59d8>
+  child_exit: <function ChildExit.child_exit at 0x7fc9cffd5ae8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fc9cffd5bf8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fc9cffd5d08>
+  on_exit: <function OnExit.on_exit at 0x7fc9cffd5e18>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-06-27 12:52:33 +0000] [15727] [INFO] Starting gunicorn 19.9.0
+[2019-06-27 12:52:33 +0000] [15727] [DEBUG] Arbiter booted
+[2019-06-27 12:52:33 +0000] [15727] [INFO] Listening at: http://127.0.0.1:8000 (15727)
+[2019-06-27 12:52:33 +0000] [15727] [INFO] Using worker: sync
+[2019-06-27 12:52:33 +0000] [15733] [INFO] Booting worker with pid: 15733
+[2019-06-27 12:52:33 +0000] [15734] [INFO] Booting worker with pid: 15734
+[2019-06-27 12:52:33 +0000] [15727] [DEBUG] 2 workers
+[2019-06-27 12:52:45 +0000] [15734] [DEBUG] GET /
+Invalid HTTP_HOST header: '192.168.27.10'. You may need to add '192.168.27.10' to ALLOWED_HOSTS.
+Bad Request: /
+[2019-06-27 12:52:45 +0000] [15734] [DEBUG] GET /favicon.ico
+Invalid HTTP_HOST header: '192.168.27.10'. You may need to add '192.168.27.10' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+[2019-06-27 12:53:02 +0000] [15727] [INFO] Handling signal: int
+[2019-06-27 12:53:02 +0000] [15734] [INFO] Worker exiting (pid: 15734)
+[2019-06-27 12:53:02 +0000] [15733] [INFO] Worker exiting (pid: 15733)
+[2019-06-27 12:53:03 +0000] [15727] [INFO] Shutting down: Master
+[2019-06-27 12:54:29 +0000] [15805] [DEBUG] Current configuration:
+  config: None
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ortiz/www/patio/patio
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ortiz/www/patio/logs/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: patio.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f305b56bf28>
+  on_reload: <function OnReload.on_reload at 0x7f305b57b0d0>
+  when_ready: <function WhenReady.when_ready at 0x7f305b57b1e0>
+  pre_fork: <function Prefork.pre_fork at 0x7f305b57b2f0>
+  post_fork: <function Postfork.post_fork at 0x7f305b57b400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f305b57b510>
+  worker_int: <function WorkerInt.worker_int at 0x7f305b57b620>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f305b57b730>
+  pre_exec: <function PreExec.pre_exec at 0x7f305b57b840>
+  pre_request: <function PreRequest.pre_request at 0x7f305b57b950>
+  post_request: <function PostRequest.post_request at 0x7f305b57b9d8>
+  child_exit: <function ChildExit.child_exit at 0x7f305b57bae8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f305b57bbf8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f305b57bd08>
+  on_exit: <function OnExit.on_exit at 0x7f305b57be18>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-06-27 12:54:29 +0000] [15805] [INFO] Starting gunicorn 19.9.0
+[2019-06-27 12:54:29 +0000] [15805] [DEBUG] Arbiter booted
+[2019-06-27 12:54:29 +0000] [15805] [INFO] Listening at: http://127.0.0.1:8000 (15805)
+[2019-06-27 12:54:29 +0000] [15805] [INFO] Using worker: sync
+[2019-06-27 12:54:29 +0000] [15811] [INFO] Booting worker with pid: 15811
+[2019-06-27 12:54:29 +0000] [15812] [INFO] Booting worker with pid: 15812
+[2019-06-27 12:54:29 +0000] [15805] [DEBUG] 2 workers
+[2019-06-27 12:54:31 +0000] [15812] [DEBUG] GET /
+Invalid HTTP_HOST header: '192.168.27.10'. You may need to add '192.168.27.10' to ALLOWED_HOSTS.
+Bad Request: /
+[2019-06-27 12:54:32 +0000] [15812] [DEBUG] GET /favicon.ico
+Invalid HTTP_HOST header: '192.168.27.10'. You may need to add '192.168.27.10' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+[2019-06-27 12:54:54 +0000] [15805] [INFO] Handling signal: int
+[2019-06-27 12:54:54 +0000] [15812] [INFO] Worker exiting (pid: 15812)
+[2019-06-27 12:54:54 +0000] [15811] [INFO] Worker exiting (pid: 15811)
+[2019-06-27 12:54:55 +0000] [15805] [INFO] Shutting down: Master
+[2019-06-27 13:46:22 +0000] [15900] [DEBUG] Current configuration:
+  config: None
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ortiz/www/patio/patio
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ortiz/www/patio/logs/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: patio.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f1799227f28>
+  on_reload: <function OnReload.on_reload at 0x7f17992370d0>
+  when_ready: <function WhenReady.when_ready at 0x7f17992371e0>
+  pre_fork: <function Prefork.pre_fork at 0x7f17992372f0>
+  post_fork: <function Postfork.post_fork at 0x7f1799237400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f1799237510>
+  worker_int: <function WorkerInt.worker_int at 0x7f1799237620>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f1799237730>
+  pre_exec: <function PreExec.pre_exec at 0x7f1799237840>
+  pre_request: <function PreRequest.pre_request at 0x7f1799237950>
+  post_request: <function PostRequest.post_request at 0x7f17992379d8>
+  child_exit: <function ChildExit.child_exit at 0x7f1799237ae8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f1799237bf8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f1799237d08>
+  on_exit: <function OnExit.on_exit at 0x7f1799237e18>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-06-27 13:46:22 +0000] [15900] [INFO] Starting gunicorn 19.9.0
+[2019-06-27 13:46:22 +0000] [15900] [DEBUG] Arbiter booted
+[2019-06-27 13:46:22 +0000] [15900] [INFO] Listening at: http://127.0.0.1:8000 (15900)
+[2019-06-27 13:46:22 +0000] [15900] [INFO] Using worker: sync
+[2019-06-27 13:46:22 +0000] [15909] [INFO] Booting worker with pid: 15909
+[2019-06-27 13:46:22 +0000] [15910] [INFO] Booting worker with pid: 15910
+[2019-06-27 13:46:22 +0000] [15900] [DEBUG] 2 workers
+[2019-06-27 13:46:31 +0000] [15910] [DEBUG] GET /
+Invalid HTTP_HOST header: '192.168.27.10'. You may need to add '192.168.27.10' to ALLOWED_HOSTS.
+Bad Request: /
+[2019-06-27 13:46:35 +0000] [15910] [DEBUG] GET /favicon.ico
+Invalid HTTP_HOST header: '192.168.27.10'. You may need to add '192.168.27.10' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+[2019-06-27 13:52:38 +0000] [15910] [DEBUG] GET /
+Invalid HTTP_HOST header: '192.168.27.10'. You may need to add '192.168.27.10' to ALLOWED_HOSTS.
+Bad Request: /
+[2019-06-27 13:52:38 +0000] [15910] [DEBUG] GET /favicon.ico
+Invalid HTTP_HOST header: '192.168.27.10'. You may need to add '192.168.27.10' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+[2019-06-27 13:52:41 +0000] [15910] [DEBUG] GET /
+Invalid HTTP_HOST header: '192.168.27.10'. You may need to add '192.168.27.10' to ALLOWED_HOSTS.
+Bad Request: /
+[2019-06-27 13:52:41 +0000] [15910] [DEBUG] GET /favicon.ico
+Invalid HTTP_HOST header: '192.168.27.10'. You may need to add '192.168.27.10' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+[2019-06-27 13:52:49 +0000] [15900] [INFO] Handling signal: term
+[2019-06-27 13:52:49 +0000] [15909] [INFO] Worker exiting (pid: 15909)
+[2019-06-27 13:52:49 +0000] [15910] [INFO] Worker exiting (pid: 15910)
+[2019-06-27 13:52:49 +0000] [15900] [INFO] Shutting down: Master
+[2019-06-27 13:52:49 +0000] [16033] [DEBUG] Current configuration:
+  config: None
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ortiz/www/patio/patio
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ortiz/www/patio/logs/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: patio.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fee8089af28>
+  on_reload: <function OnReload.on_reload at 0x7fee808aa0d0>
+  when_ready: <function WhenReady.when_ready at 0x7fee808aa1e0>
+  pre_fork: <function Prefork.pre_fork at 0x7fee808aa2f0>
+  post_fork: <function Postfork.post_fork at 0x7fee808aa400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fee808aa510>
+  worker_int: <function WorkerInt.worker_int at 0x7fee808aa620>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fee808aa730>
+  pre_exec: <function PreExec.pre_exec at 0x7fee808aa840>
+  pre_request: <function PreRequest.pre_request at 0x7fee808aa950>
+  post_request: <function PostRequest.post_request at 0x7fee808aa9d8>
+  child_exit: <function ChildExit.child_exit at 0x7fee808aaae8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fee808aabf8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fee808aad08>
+  on_exit: <function OnExit.on_exit at 0x7fee808aae18>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-06-27 13:52:49 +0000] [16033] [INFO] Starting gunicorn 19.9.0
+[2019-06-27 13:52:49 +0000] [16033] [DEBUG] Arbiter booted
+[2019-06-27 13:52:49 +0000] [16033] [INFO] Listening at: http://127.0.0.1:8000 (16033)
+[2019-06-27 13:52:49 +0000] [16033] [INFO] Using worker: sync
+[2019-06-27 13:52:49 +0000] [16039] [INFO] Booting worker with pid: 16039
+[2019-06-27 13:52:50 +0000] [16040] [INFO] Booting worker with pid: 16040
+[2019-06-27 13:52:50 +0000] [16033] [DEBUG] 2 workers
+[2019-06-27 13:53:12 +0000] [16033] [INFO] Handling signal: term
+[2019-06-27 13:53:12 +0000] [16039] [INFO] Worker exiting (pid: 16039)
+[2019-06-27 13:53:12 +0000] [16040] [INFO] Worker exiting (pid: 16040)
+[2019-06-27 13:53:12 +0000] [16033] [INFO] Shutting down: Master
+[2019-06-27 13:53:12 +0000] [16085] [DEBUG] Current configuration:
+  config: None
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ortiz/www/patio/patio
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ortiz/www/patio/logs/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: patio.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f380cd51f28>
+  on_reload: <function OnReload.on_reload at 0x7f380cd610d0>
+  when_ready: <function WhenReady.when_ready at 0x7f380cd611e0>
+  pre_fork: <function Prefork.pre_fork at 0x7f380cd612f0>
+  post_fork: <function Postfork.post_fork at 0x7f380cd61400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f380cd61510>
+  worker_int: <function WorkerInt.worker_int at 0x7f380cd61620>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f380cd61730>
+  pre_exec: <function PreExec.pre_exec at 0x7f380cd61840>
+  pre_request: <function PreRequest.pre_request at 0x7f380cd61950>
+  post_request: <function PostRequest.post_request at 0x7f380cd619d8>
+  child_exit: <function ChildExit.child_exit at 0x7f380cd61ae8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f380cd61bf8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f380cd61d08>
+  on_exit: <function OnExit.on_exit at 0x7f380cd61e18>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-06-27 13:53:12 +0000] [16085] [INFO] Starting gunicorn 19.9.0
+[2019-06-27 13:53:12 +0000] [16085] [DEBUG] Arbiter booted
+[2019-06-27 13:53:12 +0000] [16085] [INFO] Listening at: http://127.0.0.1:8000 (16085)
+[2019-06-27 13:53:12 +0000] [16085] [INFO] Using worker: sync
+[2019-06-27 13:53:12 +0000] [16091] [INFO] Booting worker with pid: 16091
+[2019-06-27 13:53:12 +0000] [16092] [INFO] Booting worker with pid: 16092
+[2019-06-27 13:53:12 +0000] [16085] [DEBUG] 2 workers
+[2019-06-27 13:53:14 +0000] [16092] [DEBUG] GET /
+[2019-06-27 13:53:15 +0000] [16092] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-06-27 13:53:21 +0000] [16092] [DEBUG] GET /admin
+[2019-06-27 13:53:21 +0000] [16092] [DEBUG] GET /admin/
+[2019-06-27 13:53:21 +0000] [16092] [DEBUG] GET /admin/login/
+[2019-06-27 13:53:34 +0000] [16092] [DEBUG] POST /admin/login/
+[2019-06-27 13:53:35 +0000] [16091] [DEBUG] GET /admin/
+[2019-06-27 13:53:35 +0000] [16091] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-06-27 13:54:03 +0000] [16091] [DEBUG] GET /
+[2019-06-27 13:54:03 +0000] [16091] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-06-27 13:54:08 +0000] [16092] [DEBUG] GET /
+[2019-06-27 13:54:08 +0000] [16092] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-06-27 13:55:51 +0000] [16085] [INFO] Handling signal: term
+[2019-06-27 13:55:51 +0000] [16092] [INFO] Worker exiting (pid: 16092)
+[2019-06-27 13:55:51 +0000] [16091] [INFO] Worker exiting (pid: 16091)
+[2019-06-27 13:55:52 +0000] [16085] [INFO] Shutting down: Master
+[2019-06-27 14:19:05 +0000] [1136] [DEBUG] Current configuration:
+  config: None
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ortiz/www/patio/patio
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ortiz/www/patio/logs/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: patio.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f84f2810f28>
+  on_reload: <function OnReload.on_reload at 0x7f84f28210d0>
+  when_ready: <function WhenReady.when_ready at 0x7f84f28211e0>
+  pre_fork: <function Prefork.pre_fork at 0x7f84f28212f0>
+  post_fork: <function Postfork.post_fork at 0x7f84f2821400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f84f2821510>
+  worker_int: <function WorkerInt.worker_int at 0x7f84f2821620>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f84f2821730>
+  pre_exec: <function PreExec.pre_exec at 0x7f84f2821840>
+  pre_request: <function PreRequest.pre_request at 0x7f84f2821950>
+  post_request: <function PostRequest.post_request at 0x7f84f28219d8>
+  child_exit: <function ChildExit.child_exit at 0x7f84f2821ae8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f84f2821bf8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f84f2821d08>
+  on_exit: <function OnExit.on_exit at 0x7f84f2821e18>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-06-27 14:19:05 +0000] [1136] [INFO] Starting gunicorn 19.9.0
+[2019-06-27 14:19:05 +0000] [1136] [DEBUG] Arbiter booted
+[2019-06-27 14:19:05 +0000] [1136] [INFO] Listening at: http://127.0.0.1:8000 (1136)
+[2019-06-27 14:19:05 +0000] [1136] [INFO] Using worker: sync
+[2019-06-27 14:19:05 +0000] [1162] [INFO] Booting worker with pid: 1162
+[2019-06-27 14:19:06 +0000] [1165] [INFO] Booting worker with pid: 1165
+[2019-06-27 14:19:06 +0000] [1136] [DEBUG] 2 workers
+[2019-06-27 14:19:08 +0000] [1162] [DEBUG] GET /
+[2019-06-27 14:19:19 +0000] [1162] [DEBUG] GET /admin/
+[2019-06-29 18:54:15 +0000] [936] [DEBUG] Current configuration:
+  config: None
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ortiz/www/patio/patio
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ortiz/www/patio/logs/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: patio.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb031efbf28>
+  on_reload: <function OnReload.on_reload at 0x7fb031f0b0d0>
+  when_ready: <function WhenReady.when_ready at 0x7fb031f0b1e0>
+  pre_fork: <function Prefork.pre_fork at 0x7fb031f0b2f0>
+  post_fork: <function Postfork.post_fork at 0x7fb031f0b400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb031f0b510>
+  worker_int: <function WorkerInt.worker_int at 0x7fb031f0b620>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb031f0b730>
+  pre_exec: <function PreExec.pre_exec at 0x7fb031f0b840>
+  pre_request: <function PreRequest.pre_request at 0x7fb031f0b950>
+  post_request: <function PostRequest.post_request at 0x7fb031f0b9d8>
+  child_exit: <function ChildExit.child_exit at 0x7fb031f0bae8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb031f0bbf8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb031f0bd08>
+  on_exit: <function OnExit.on_exit at 0x7fb031f0be18>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-06-29 18:54:15 +0000] [936] [INFO] Starting gunicorn 19.9.0
+[2019-06-29 18:54:15 +0000] [936] [DEBUG] Arbiter booted
+[2019-06-29 18:54:15 +0000] [936] [INFO] Listening at: http://127.0.0.1:8000 (936)
+[2019-06-29 18:54:15 +0000] [936] [INFO] Using worker: sync
+[2019-06-29 18:54:15 +0000] [1006] [INFO] Booting worker with pid: 1006
+[2019-06-29 18:54:16 +0000] [1016] [INFO] Booting worker with pid: 1016
+[2019-06-29 18:54:16 +0000] [936] [DEBUG] 2 workers
+[2019-07-01 12:58:25 +0000] [1006] [DEBUG] GET /
+[2019-07-01 12:58:30 +0000] [1006] [DEBUG] GET /
+[2019-07-01 12:58:30 +0000] [1006] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-07-01 12:58:34 +0000] [1006] [DEBUG] GET /admin/logout/
+[2019-07-01 12:58:36 +0000] [1006] [DEBUG] GET /admin/
+[2019-07-01 12:58:36 +0000] [1006] [DEBUG] GET /admin/login/
+[2019-07-01 12:58:39 +0000] [1016] [DEBUG] POST /admin/login/
+[2019-07-01 12:58:40 +0000] [1006] [DEBUG] GET /admin/
+[2019-07-01 12:58:41 +0000] [1016] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-07-01 13:22:22 +0000] [1016] [DEBUG] GET /
+[2019-07-01 13:22:25 +0000] [1016] [DEBUG] GET /
+[2019-07-01 13:22:27 +0000] [1016] [DEBUG] GET /
+[2019-07-01 13:36:41 +0000] [1016] [DEBUG] GET /
+[2019-07-01 13:36:43 +0000] [1016] [DEBUG] GET /
+[2019-07-01 13:36:44 +0000] [1016] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-07-01 13:37:02 +0000] [1016] [DEBUG] GET /
+[2019-07-01 13:37:03 +0000] [1016] [DEBUG] GET /
+[2019-07-01 13:37:04 +0000] [1016] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-07-01 13:37:05 +0000] [1016] [DEBUG] GET /
+[2019-07-01 13:37:06 +0000] [1016] [DEBUG] GET /
+[2019-07-01 13:37:06 +0000] [1016] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-07-01 18:33:26 +0000] [1006] [DEBUG] GET /
+[2019-07-01 18:33:31 +0000] [1006] [DEBUG] GET /
+[2019-07-01 18:33:31 +0000] [1006] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-07-01 18:44:29 +0000] [1016] [DEBUG] GET /
+[2019-07-01 18:44:31 +0000] [1016] [DEBUG] GET /
+[2019-07-01 18:44:31 +0000] [1016] [DEBUG] GET /
+[2019-07-01 18:44:32 +0000] [1016] [DEBUG] GET /
+[2019-07-01 18:44:33 +0000] [1006] [DEBUG] GET /
+[2019-07-01 18:44:33 +0000] [1006] [DEBUG] GET /
+[2019-07-01 18:44:33 +0000] [1006] [DEBUG] GET /
+[2019-07-01 18:44:53 +0000] [936] [INFO] Handling signal: term
+[2019-07-01 18:44:53 +0000] [1016] [INFO] Worker exiting (pid: 1016)
+[2019-07-01 18:44:53 +0000] [1006] [INFO] Worker exiting (pid: 1006)
+[2019-07-01 18:44:53 +0000] [936] [INFO] Shutting down: Master
+[2019-07-01 18:45:34 +0000] [967] [DEBUG] Current configuration:
+  config: None
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 2
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/ortiz/www/patio/patio
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/ortiz/www/patio/logs/gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: patio.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f344ccddf28>
+  on_reload: <function OnReload.on_reload at 0x7f344cced0d0>
+  when_ready: <function WhenReady.when_ready at 0x7f344cced1e0>
+  pre_fork: <function Prefork.pre_fork at 0x7f344cced2f0>
+  post_fork: <function Postfork.post_fork at 0x7f344cced400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f344cced510>
+  worker_int: <function WorkerInt.worker_int at 0x7f344cced620>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f344cced730>
+  pre_exec: <function PreExec.pre_exec at 0x7f344cced840>
+  pre_request: <function PreRequest.pre_request at 0x7f344cced950>
+  post_request: <function PostRequest.post_request at 0x7f344cced9d8>
+  child_exit: <function ChildExit.child_exit at 0x7f344ccedae8>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f344ccedbf8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f344ccedd08>
+  on_exit: <function OnExit.on_exit at 0x7f344ccede18>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2019-07-01 18:45:34 +0000] [967] [INFO] Starting gunicorn 19.9.0
+[2019-07-01 18:45:34 +0000] [967] [DEBUG] Arbiter booted
+[2019-07-01 18:45:34 +0000] [967] [INFO] Listening at: http://127.0.0.1:8000 (967)
+[2019-07-01 18:45:34 +0000] [967] [INFO] Using worker: sync
+[2019-07-01 18:45:34 +0000] [1040] [INFO] Booting worker with pid: 1040
+[2019-07-01 18:45:34 +0000] [1041] [INFO] Booting worker with pid: 1041
+[2019-07-01 18:45:34 +0000] [967] [DEBUG] 2 workers
+[2019-07-01 18:46:28 +0000] [1040] [DEBUG] GET /
+[2019-07-01 18:46:29 +0000] [1040] [DEBUG] GET /
+[2019-07-01 18:46:30 +0000] [1040] [DEBUG] GET /
+[2019-07-01 18:46:30 +0000] [1040] [DEBUG] GET /
+[2019-07-01 18:46:31 +0000] [1041] [DEBUG] GET /admin/logout/
+[2019-07-01 18:46:33 +0000] [1041] [DEBUG] GET /admin/
+[2019-07-01 18:46:33 +0000] [1041] [DEBUG] GET /admin/login/
+[2019-07-01 18:46:36 +0000] [1041] [DEBUG] POST /admin/login/
+[2019-07-01 18:46:37 +0000] [1041] [DEBUG] GET /admin/
+[2019-07-01 18:46:38 +0000] [1041] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-07-01 18:55:28 +0000] [1041] [DEBUG] GET /admin/
+[2019-07-01 18:55:29 +0000] [1041] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-07-01 19:18:00 +0000] [1040] [DEBUG] GET /
+[2019-07-01 19:18:01 +0000] [1040] [DEBUG] GET /
+[2019-07-01 19:18:25 +0000] [1040] [DEBUG] GET /admin/auth/user/
+[2019-07-01 19:18:25 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:18:28 +0000] [1040] [DEBUG] GET /admin/auth/user/1/change/
+[2019-07-01 19:18:28 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:19:22 +0000] [1040] [DEBUG] POST /admin/auth/user/1/change/
+[2019-07-01 19:19:22 +0000] [1040] [DEBUG] GET /admin/auth/user/1/change/
+[2019-07-01 19:19:22 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:19:38 +0000] [1041] [DEBUG] GET /admin/auth/user/
+[2019-07-01 19:19:38 +0000] [1041] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:19:41 +0000] [1041] [DEBUG] GET /admin/auth/
+[2019-07-01 19:19:42 +0000] [1041] [DEBUG] GET /admin/
+[2019-07-01 19:19:45 +0000] [1041] [DEBUG] GET /admin/auth/group/
+[2019-07-01 19:19:45 +0000] [1041] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:19:47 +0000] [1041] [DEBUG] GET /admin/
+[2019-07-01 19:19:48 +0000] [1041] [DEBUG] GET /admin/auth/user/
+[2019-07-01 19:19:48 +0000] [1041] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:20:16 +0000] [1040] [DEBUG] GET /admin/auth/user/1/change/
+[2019-07-01 19:20:17 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:20:34 +0000] [1040] [DEBUG] GET /admin/password_change/
+[2019-07-01 19:20:38 +0000] [1041] [DEBUG] GET /admin/
+[2019-07-01 19:20:40 +0000] [1040] [DEBUG] GET /admin/auth/user/
+[2019-07-01 19:20:40 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:22:08 +0000] [1040] [DEBUG] GET /admin/auth/user/1/change/
+[2019-07-01 19:22:09 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:22:11 +0000] [1041] [DEBUG] GET /admin/auth/user/1/delete/
+[2019-07-01 19:22:19 +0000] [1040] [DEBUG] POST /admin/auth/user/1/delete/
+[2019-07-01 19:22:19 +0000] [1040] [DEBUG] GET /admin/auth/user/
+[2019-07-01 19:22:19 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:22:22 +0000] [1040] [DEBUG] GET /admin/auth/user/2/change/
+[2019-07-01 19:22:22 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:23:41 +0000] [1040] [DEBUG] POST /admin/auth/user/2/change/
+[2019-07-01 19:23:41 +0000] [1040] [DEBUG] GET /admin/auth/user/
+[2019-07-01 19:23:42 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:23:44 +0000] [1040] [DEBUG] GET /admin/password_change/
+[2019-07-01 19:23:54 +0000] [1040] [DEBUG] POST /admin/password_change/
+[2019-07-01 19:23:54 +0000] [1040] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-07-01 19:24:14 +0000] [1040] [DEBUG] POST /admin/password_change/
+[2019-07-01 19:24:15 +0000] [1040] [DEBUG] GET /admin/password_change/done/
+[2019-07-01 19:24:16 +0000] [1040] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-07-01 19:24:18 +0000] [1040] [DEBUG] GET /admin/
+[2019-07-01 19:24:18 +0000] [1040] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-07-01 19:26:03 +0000] [1040] [DEBUG] GET /admin/auth/user/
+[2019-07-01 19:26:03 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:26:06 +0000] [1040] [DEBUG] GET /admin/auth/user/add/
+[2019-07-01 19:26:06 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:26:18 +0000] [1040] [DEBUG] POST /admin/auth/user/add/
+[2019-07-01 19:26:18 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:26:36 +0000] [1040] [DEBUG] POST /admin/auth/user/add/
+[2019-07-01 19:26:36 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:26:50 +0000] [1040] [DEBUG] POST /admin/auth/user/add/
+[2019-07-01 19:26:50 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:26:58 +0000] [1040] [DEBUG] POST /admin/auth/user/add/
+[2019-07-01 19:26:58 +0000] [1040] [DEBUG] GET /admin/auth/user/3/change/
+[2019-07-01 19:26:59 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:26:59 +0000] [1040] [DEBUG] GET /favicon.ico
+Not Found: /favicon.ico
+[2019-07-01 19:27:13 +0000] [1040] [DEBUG] POST /admin/auth/user/3/change/
+[2019-07-01 19:27:13 +0000] [1040] [DEBUG] GET /admin/auth/user/add/
+[2019-07-01 19:27:13 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:27:23 +0000] [1040] [DEBUG] POST /admin/auth/user/add/
+[2019-07-01 19:27:23 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:27:36 +0000] [1040] [DEBUG] POST /admin/auth/user/add/
+[2019-07-01 19:27:36 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:27:51 +0000] [1040] [DEBUG] POST /admin/auth/user/add/
+[2019-07-01 19:27:52 +0000] [1041] [DEBUG] GET /admin/auth/user/add/
+[2019-07-01 19:27:52 +0000] [1041] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:27:54 +0000] [1041] [DEBUG] POST /admin/auth/user/add/
+[2019-07-01 19:27:55 +0000] [1041] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:27:56 +0000] [1041] [DEBUG] GET /admin/auth/user/
+[2019-07-01 19:27:56 +0000] [1041] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:28:02 +0000] [1041] [DEBUG] GET /admin/auth/user/3/change/
+[2019-07-01 19:28:02 +0000] [1041] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:28:53 +0000] [1041] [DEBUG] GET /admin/auth/user/3/history/
+[2019-07-01 19:28:56 +0000] [1041] [DEBUG] GET /admin/
+[2019-07-01 19:30:27 +0000] [1041] [DEBUG] GET /admin/remocoes/remocao/
+[2019-07-01 19:30:28 +0000] [1041] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:30:39 +0000] [1040] [DEBUG] GET /admin/remocoes/remocao/
+[2019-07-01 19:30:39 +0000] [1041] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:30:41 +0000] [1040] [DEBUG] GET /admin/remocoes/remocao/569/change/
+[2019-07-01 19:30:41 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:30:49 +0000] [1041] [DEBUG] GET /admin/remocoes/liberacao/add/
+[2019-07-01 19:30:50 +0000] [1041] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:33:44 +0000] [1041] [DEBUG] POST /admin/remocoes/liberacao/add/
+[2019-07-01 19:34:06 +0000] [1040] [DEBUG] POST /admin/remocoes/remocao/569/change/
+[2019-07-01 19:34:06 +0000] [1040] [DEBUG] GET /admin/remocoes/remocao/
+[2019-07-01 19:34:06 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:34:10 +0000] [1040] [DEBUG] GET /admin/remocoes/remocao/569/change/
+[2019-07-01 19:34:10 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:34:13 +0000] [1040] [DEBUG] GET /admin/
+[2019-07-01 19:34:15 +0000] [1040] [DEBUG] GET /admin/remocoes/liberacao/
+[2019-07-01 19:34:15 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:34:22 +0000] [1040] [DEBUG] GET /admin/remocoes/liberacao/4/change/
+[2019-07-01 19:34:22 +0000] [1040] [DEBUG] GET /admin/jsi18n/
+[2019-07-01 19:34:36 +0000] [1040] [DEBUG] GET /admin/remocoes/liberacao/4/change/doc_liberacao/931105_-_QPT0182.png
+[2019-07-01 19:34:36 +0000] [1040] [DEBUG] GET /admin/remocoes/liberacao/4/change/doc_liberacao/931105_-_QPT0182.png/
+[2019-07-01 19:34:36 +0000] [1040] [DEBUG] GET /admin/remocoes/liberacao/4/change/doc_liberacao/931105_-_QPT0182.png/change/
+[2019-07-01 19:34:36 +0000] [1040] [DEBUG] GET /admin/

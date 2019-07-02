@@ -25,7 +25,7 @@ SECRET_KEY = '9wa12i%g4$ls*z7i)egb&j-wbsr&cjr1ts)7586v^!sj208!3e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.27.10', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -120,5 +120,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/ortiz/www/patio/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
