@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
 
@@ -32,7 +33,10 @@ class Liberacao(models.Model):
         ordering = ['data_liberacao']
 
     def __str__(self):
-        return self.observacoes
+        if self.observacoes == '':
+            return str(self.data_liberacao.strftime('%d/%m/%Y'))
+        else:
+            return str(self.data_liberacao.strftime('%d/%m/%Y')) + ' - ' + self.observacoes
 
 class Remocao(models.Model):
     plaqueta = models.IntegerField('Plaqueta')
