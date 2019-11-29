@@ -21,7 +21,7 @@ class Patio(models.Model):
 
 class Liberacao(models.Model):
     data_liberacao = models.DateField('Data de Liberação')
-    documento_liberacao = models.ImageField(
+    documento_liberacao = models.FileField(
         upload_to='doc_liberacao', verbose_name='Documento de Liberação')
     observacoes = models.TextField('Observações', blank=True)
     criado_em = models.DateTimeField('Criado em', auto_now_add=True)
@@ -52,7 +52,7 @@ class Remocao(models.Model):
     cor = models.CharField('Cor', max_length=300, blank=True, null=True)
     chassi = models.CharField('Chassi', max_length=300, blank=True)
     observacoes = models.TextField('Observações', blank=True, null=True)
-    documento_remocao = models.ImageField(
+    documento_remocao = models.FileField(
         upload_to='doc_remocao', verbose_name='Documento de Remoção', null=True, blank=True)
     bloqueio_judicial = models.BooleanField('BJ', blank=True, null=True)
     liberacao = models.ForeignKey(
