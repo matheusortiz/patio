@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Patio, Liberacao, Remocao
+from .models import Patio, Liberacao, Remocao, Setor
 
 class RemocaoAdmin(admin.ModelAdmin):
     list_display = ['plaqueta', 'placa', 'uf', 'data_vistoria', 'patio']
@@ -11,3 +11,4 @@ class RemocaoAdmin(admin.ModelAdmin):
 admin.site.register(Patio)
 admin.site.register(Liberacao)
 admin.site.register(Remocao, RemocaoAdmin)
+admin.site.register(Setor)

@@ -18,6 +18,23 @@ class Patio(models.Model):
         verbose_name_plural = 'Pátios'
         ordering = ['descricao']
 
+class Setor(models.Model):
+    descricao = models.CharField('Descrição', max_length=300)
+    coluna = models.CharField('Coluna', max_length=300)
+    fileira = models.CharField('Fileira', max_length=300)
+    patio = models.ForeignKey(Patio, on_delete=models.SET_NULL, null=True, blank=True)
+    observacoes = models.TextField('Observações', blank=True)
+    criado_em = models.DateTimeField('Criado em', auto_now_add=True)
+    atualizado_em = models.DateTimeField('Atualizado em', auto_now=True)
+
+    def __str__(self):
+        return self.descricao
+
+    class Meta:
+        verbose_name = 'Setor'
+        verbose_name_plural = 'Setores'
+        ordering = ['descricao']
+
 
 class Liberacao(models.Model):
     data_liberacao = models.DateField('Data de Liberação')
@@ -55,8 +72,7 @@ class Remocao(models.Model):
     documento_remocao = models.FileField(
         upload_to='doc_remocao', verbose_name='Documento de Remoção', null=True, blank=True)
     bloqueio_judicial = models.BooleanField('BJ', blank=True, null=True)
-    liberacao = models.ForeignKey(
-        Liberacao, on_delete=models.SET_NULL, null=True, blank=True)
+    liberacao = models.ForeignKey(Liberacao, on_delete=models.SET_NULL, null=True, blank=True)
     criado_em = models.DateTimeField('Criado em', auto_now_add=True, null=True)
     atualizado_em = models.DateTimeField('Atualizado em', auto_now=True, null=True)
 
