@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
-PRODUCAO = True
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -23,6 +21,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '9wa12i%g4$ls*z7i)egb&j-wbsr&cjr1ts)7586v^!sj208!3e'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.27.10', 'localhost', '127.0.0.1']
 
@@ -71,6 +72,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'patio.wsgi.application'
 
+
+# Database
+# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -95,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'America/Sao_Paulo'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -113,32 +126,3 @@ STATIC_ROOT = '/home/ortiz/www/patio/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/' 
-
-# SECURITY WARNING: don't run with debug turned on in production!
-
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-if PRODUCAO:
-    DEBUG = False
-
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'patio',
-            'USER' : 'root',
-            'PASSWORD' : '',
-            'HOST' : '127.0.0.1',
-            'PORT' : '3306',
-        }
-    }
-
-else:
-    DEBUG = True
-
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }

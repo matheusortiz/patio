@@ -2,11 +2,12 @@
 *.pyc
 __pycache__
 venv
+env
+logs
 db.sqlite3
 /static
 .DS_Store
 .vscode
 importacao
 media
-logs
 migrations
