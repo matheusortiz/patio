@@ -79,6 +79,7 @@ class Remocao(models.Model):
     def __str__(self):
         return self.placa
 
+    
     class Meta:
         verbose_name = 'Remoção'
         verbose_name_plural = 'Remoções'

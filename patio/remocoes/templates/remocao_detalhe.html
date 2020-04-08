@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+<html>
+
+<body>
+
+    <h2>
+        {{ remocao.plaqueta}} -  {{ remocao.placa}}
+        {% if remocao.bloqueio_judicial %}
+            - Bloqueio Judicial
+        {% endif%}
+    </h2>
+
+    <table class="pure-table pure-table-bordered">
+        <tbody>
+            <tr>
+                <td><strong>Plaqueta</strong></td>
+                <td>{{ remocao.plaqueta}}</td>
+            </tr>
+            <tr>
+                <td><strong>Placa</strong></td>
+                <td>{{ remocao.placa}} - {{ remocao.uf }}</td>
+            </tr>
+            <tr>
+                <td><strong>Data da Vistoria</strong></td>
+                <td>{{ remocao.data_vistoria }}</td>
+            </tr>
+            <tr>
+                <td><strong>Patio</strong></td>
+                <td>{{ remocao.patio }}</td>
+            </tr>
+            <tr>
+                <td><strong>Marca/Modelo</strong></td>
+                <td>{{ remocao.marca }} - {{ remocao.modelo }}</td>
+            </tr>
+            <tr>
+                <td><strong>Cor</strong></td>
+                <td>{{ remocao.cor }}</td>
+            </tr>
+            <tr>
+                <td><strong>Espécie</strong></td>
+                <td>{{ remocao.especie }}</td>
+            </tr>
+            <tr>
+                <td><strong>Tipo</strong></td>
+                <td>{{ remocao.tipo }}</td>
+            </tr>
+            <tr>
+                <td><strong>Combustivel</strong></td>
+                <td>{{ remocao.combustivel }}</td>
+            </tr>
+            <tr>
+                <td><strong>Chassi</strong></td>
+                <td>{{ remocao.chassi }}</td>
+            </tr>
+            <tr>
+                <td><strong>Observações</strong></td>
+                <td>{{ remocao.observacoes|linebreaks }}</td>
+            </tr>
+            <tr>
+                <td><strong>Bloqueio Judicial</strong></td>
+                <td>
+                    {% if remocao.bloqueio_judicial %}
+                        Sim
+                    {% else %}
+                        Não
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Documentos de Remoção</strong></td>
+                <td>
+                    {{ remocao.documento_remocao.url }}
+                </td>
+            </tr>
+            {% if remocao.liberacao %}
+            <tr>
+                <td><strong>Documentos de Liberação</strong></td>
+                <td>
+                    {{ remocao.liberacao }}
+                </td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>
+
+{% endblock %}

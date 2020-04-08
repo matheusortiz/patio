@@ -1,0 +1,73 @@
+<!doctype html>
+
+{% load static %}
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sistema de Gerenciamento de Pátios</title>
+    <link rel="stylesheet" href="{% static 'css/pure-min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <style>
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center
+        }
+
+        .box {
+            width: 400px;
+            height: 400px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img.logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="box">
+
+
+            <img class="logo" src="{% static 'img/logo.png' %}" alt="Logo" height="96" width="96">
+            <form class="pure-form pure-form-aligned">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <input id="usuario" type="text" class="pure-input-1" placeholder="Usuario">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <input id="senha" type="password" class="pure-input-1" placeholder="Senha">
+                    </div>
+
+                    
+                        <label for="lembrar" class="pure-checkbox">
+                            <input id="lembrar_senha" type="checkbox"> Lembrar senha
+                        </label>
+
+                        <button type="submit" class="pure-button pure-input-1 pure-button-primary">Entrar</button>
+                    
+                </fieldset>
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
