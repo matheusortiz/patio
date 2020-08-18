@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+<html>
+
+<body>
+
+
+    <div class="pure-g-r content-ribbon" id="suporte_form">
+        
+        <div class="pure-u-1">
+            <h2> Suporte </h2>
+            {% if is_valid %}
+            <h3> Formulário enviado com sucesso </h3>
+            {% endif %}
+            <form action="#" class="pure-form pure-form-aligned" method="POST">
+                {% csrf_token %}
+                <fieldset>
+                    {% for field in form %}
+                    <div class="pure-control-group">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                    {% endfor %}
+                    <div class="pure-controls">
+                        <button class="pure-button">Enviar</button>
+                        <a class="pure-button" href="{% url 'suporte' %}">Cancelar</a>
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
+
+{% endblock %}

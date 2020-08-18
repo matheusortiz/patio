@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Remocao
+from .forms import CadastroRemocao, Suporte
 
 # Create your views here.
 
@@ -23,6 +24,21 @@ def remocao_detalhe(request, id):
         }
     return render(request, 'remocao_detalhe.html', contexto)
 
+def remocao_form(request):
+    contexto = {}
+    if request.method == 'POST':
+        form = CadastroRemocao(request.POST)
+        if form.is_valid():
+            contexto['is_valid'] = True
+            form = CadastroRemocao()
+    else:
+        form = CadastroRemocao()
+
+    contexto['form'] = form
+
+    return render(request, 'remocao_form.html', contexto)
+
+
 def liberacao(request):
     return render(request, 'liberacao.html')
 
@@ -31,3 +47,18 @@ def patio(request):
 
 def setor(request):
     return render(request, 'setor.html')
+
+def suporte(request):
+    contexto = {}
+    if request.method == 'POST':
+        form = Suporte(request.POST)
+        if form.is_valid():
+            contexto['is_valid'] = True
+            form.send_mail()
+            form = Suporte()
+    else:
+        form = Suporte()
+
+    contexto['form'] = form
+
+    return render(request, 'suporte.html', contexto)

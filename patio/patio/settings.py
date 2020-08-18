@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'remocoes',
-    'etilometros'
+    'etilometros',
+    'usuarios',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,16 @@ STATIC_ROOT = '/home/ortiz/www/patio/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/' 
+
+# Emails
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'App Patio <apppatio@gmail.com>'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'apppatio@gmail.com'
+EMAIL_HOST_PASSWORD = 'senha'
+EMAIL_PORT = 587
+
+EMAIL_CONTATO = 'matheus7@gmail.com',
+
+LOGIN_REDIRECT_URL = '/'
