@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+<form class="pure-form pure-form-aligned" method="POST">
+    {% csrf_token %}
+    <fieldset>
+        {{ form.non_field_errors }}
+        <div class="pure-control-group">
+            {{ form.as_p }}
+        </div>
+
+            <button type="submit" class="pure-button pure-input-1 pure-button-primary">Cadastrar</button>
+        
+    </fieldset>
+</form>
+
+{% endblock %}

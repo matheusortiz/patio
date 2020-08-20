@@ -47,6 +47,7 @@
             <form class="pure-form pure-form-aligned" method="POST">
                 {% csrf_token %}
                 <fieldset>
+                    {{ form.non_field_errors }}
                     <div class="pure-control-group">
                         {{ form.as_p }}
                     </div>

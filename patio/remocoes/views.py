@@ -4,9 +4,6 @@ from .forms import CadastroRemocao, Suporte
 
 # Create your views here.
 
-def login(request):
-    return render(request, 'login.html')
-
 def inicial(request):
     return render(request, 'inicial.html')
 

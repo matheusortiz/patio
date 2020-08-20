@@ -145,4 +145,6 @@ EMAIL_PORT = 587
 
 EMAIL_CONTATO = 'matheus7@gmail.com',
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'inicial'
+LOGOUT_REDIRECT_URL = 'login'
