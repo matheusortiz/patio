@@ -5,7 +5,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('contas/', include('usuarios.urls'), name='login' ),
+    path('contas/', include('usuarios.urls', namespace='usuarios')),
     path('contas/', include('django.contrib.auth.urls')),
-    path('', include('remocoes.urls'), name='home' ),
+    path('', include('remocoes.urls', namespace='remocoes')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

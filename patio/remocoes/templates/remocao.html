@@ -4,67 +4,59 @@
 
 {% block container %}
 
-<html>
+<h2>Remoções</h2>
 
-<body>
+<table class="pure-table pure-table-bordered">
+    <thead>
+        <tr>
+            <th>Plaqueta</th>
+            <th>Placa</th>
+            <th>UF</th>
+            <th>Vistoria</th>
+            <th>Patio</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Cor</th>
+            <th>Detalhes</th>
+            <th>BJ</th>
+            <th>Remoção</th>
+            <th>Liberação</th>
+        </tr>
+    </thead>
 
-    <h2>Remoções</h2>
-
-    <table class="pure-table pure-table-bordered">
-        <thead>
-            <tr>
-                <th>Plaqueta</th>
-                <th>Placa</th>
-                <th>UF</th>
-                <th>Vistoria</th>
-                <th>Patio</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Cor</th>
-                <th>Detalhes</th>
-                <th>BJ</th>
-                <th>Remoção</th>
-                <th>Liberação</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            {% for remocao in remocoes %}
-            <tr>
-                <td>{{ remocao.plaqueta }}</td>
-                <td>{{ remocao.placa }}</td>
-                <td>{{ remocao.uf }}</td>
-                <td>{{ remocao.data_vistoria }}</td>
-                <td>{{ remocao.patio }}</td>
-                <td>{{ remocao.marca }}</td>
-                <td>{{ remocao.modelo }}</td>
-                <td>{{ remocao.cor }}</td>
-                <td>
-                    <a href="{% url 'remocao_detalhe' remocao.id %}"> <img src="{% static 'icon/detalhe32.png' %}" alt="Detalhes da Remoção" height="32" width="32"> </a>
-                </td>
-                <td>
-                    {% if remocao.bloqueio_judicial %}
-                    <img src="{% static 'icon/alerta32.png' %}" alt="Possui Bloqueio Judicial" height="32" width="32">
-                    {% endif %}
-                </td>
-                <td>
-                    <a href="{{ remocao.documento_remocao }}"> <img src="{% static 'icon/guincho32.png' %}"
-                            alt="Documentos de Remoção" height="32" width="32"> </a>
-                </td>
-                <td>
-                    {% if remocao.liberacao %}
-                    <a href="{{ remocao.liberacao }}"> <img src="{% static 'icon/liberacao32.png' %}" alt="Documentos de Liberação" height="32" width="32"> </a>
-                    {% endif %}
-                </td>
-            </tr>
-            {% empty %}
-            <p> Nenhuma remoção disponível. </p>
-            {% endfor %}
-        </tbody>
-    </table>
-
-</body>
-
-</html>
+    <tbody>
+        {% for remocao in remocoes %}
+        <tr>
+            <td>{{ remocao.plaqueta }}</td>
+            <td>{{ remocao.placa }}</td>
+            <td>{{ remocao.uf }}</td>
+            <td>{{ remocao.data_vistoria }}</td>
+            <td>{{ remocao.patio }}</td>
+            <td>{{ remocao.marca }}</td>
+            <td>{{ remocao.modelo }}</td>
+            <td>{{ remocao.cor }}</td>
+            <td>
+                <a href="{% url 'remocoes:remocao_detalhe' remocao.id %}"> <img src="{% static 'icon/detalhe32.png' %}" alt="Detalhes da Remoção" height="32" width="32"> </a>
+            </td>
+            <td>
+                {% if remocao.bloqueio_judicial %}
+                <img src="{% static 'icon/alerta32.png' %}" alt="Possui Bloqueio Judicial" height="32" width="32">
+                {% endif %}
+            </td>
+            <td>
+                <a href="{{ remocao.documento_remocao }}"> <img src="{% static 'icon/guincho32.png' %}"
+                        alt="Documentos de Remoção" height="32" width="32"> </a>
+            </td>
+            <td>
+                {% if remocao.liberacao %}
+                <a href="{{ remocao.liberacao }}"> <img src="{% static 'icon/liberacao32.png' %}" alt="Documentos de Liberação" height="32" width="32"> </a>
+                {% endif %}
+            </td>
+        </tr>
+        {% empty %}
+        <p> Nenhuma remoção disponível. </p>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock %}

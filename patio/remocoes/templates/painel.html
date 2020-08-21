@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+<div class="pure-g-r content-ribbon">
+    <h2>Painel do Usuário</h2>
+    <div class="pure-u-2-3">
+        <div class="inner">
+            <p><strong>Usuário:</strong> {{ user }}</p>
+            <p><strong>Nome:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+        </div>
+    </div>
+            <a class="pure-menu-heading">Teste</a>
+            <ul>
+                <li>Teste 01</li>
+                <li>Teste 02</li>
+            </ul>
+</div>
+
+{% endblock %}

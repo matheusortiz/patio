@@ -1,18 +1,63 @@
-{% extends 'base.html' %}
+<!doctype html>
 
-{% block container %}
+{% load static %}
 
-<form class="pure-form pure-form-aligned" method="POST">
-    {% csrf_token %}
-    <fieldset>
-        {{ form.non_field_errors }}
-        <div class="pure-control-group">
-            {{ form.as_p }}
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sistema de Gerenciamento de Pátios</title>
+    <link rel="stylesheet" href="{% static 'css/pure-min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <style>
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center
+        }
+
+        .box {
+            width: 800px;
+            height: 800px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img.logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">,
+
+        <div class="box">
+            <h1 style="text-align: center;" class="content-head">Appátio</h1>
+            <form class="pure-form pure-form-aligned" method="POST">
+                {% csrf_token %}
+                <h1>Cadastro de Usuário</h1>
+                <fieldset>
+                    {{ form.non_field_errors }}
+                    <div class="pure-control-group">
+                        {{ form.as_p }}
+                    </div>
+
+                        <button type="submit" class="pure-button pure-input-1-2 pure-button-primary">Cadastrar</button>
+                    
+                </fieldset>
+            </form>
         </div>
 
-            <button type="submit" class="pure-button pure-input-1 pure-button-primary">Cadastrar</button>
-        
-    </fieldset>
-</form>
+    </div>
 
-{% endblock %}
+</body>
+
+</html>
