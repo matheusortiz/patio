@@ -6,6 +6,8 @@ app_name = 'usuarios'
 
 urlpatterns = [
     path('', include('django.contrib.auth.urls'), name='login'),
-    path('cadastro/', views.cadastro, name='cadastro'),
+    path('cadastrar/', views.cadastrar, name='cadastrar'),
     path('painel/', views.painel, name='painel'),
+    path('editar/', views.editar, name='editar'),
+    path('senha/', views.editar_senha, name='senha'),
 ]
