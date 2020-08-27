@@ -1,7 +1,4 @@
 from django.contrib import admin
-
-# Register your models here.
-
 from .models import Patio, Liberacao, Remocao, Setor
 
 class RemocaoAdmin(admin.ModelAdmin):

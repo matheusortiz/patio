@@ -1,0 +1,54 @@
+<!doctype html>
+
+{% load static %}
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sistema de Gerenciamento de Pátios</title>
+    <link rel="stylesheet" href="{% static 'css/pure-min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <style>
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center
+        }
+
+        .box {
+            width: 400px;
+            height: 400px;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        img.logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="box">
+            <h1 style="text-align: center;" class="content-head">Appátio</h1>
+            
+            {% block box %}{% endblock %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

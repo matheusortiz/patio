@@ -13,3 +13,4 @@ urlpatterns = [
     path('setor/', views.setor, name='setor'),
     path('suporte/', views.suporte, name='suporte'),
 ]
+    

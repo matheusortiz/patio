@@ -1,64 +1,21 @@
-<!doctype html>
+{% extends 'base_login.html' %}
+
+{% block box %}
 
 {% load static %}
 
-<html lang="pt-br">
-
-<head>
-    <meta charset="utf-8">
-    <title>Sistema de Gerenciamento de Pátios</title>
-    <link rel="stylesheet" href="{% static 'css/pure-min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-
-    <style>
-        .container {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center
-        }
-
-        .box {
-            width: 400px;
-            height: 400px;
-            justify-content: center;
-            align-items: center;
-
-        }
-
-        img.logo {
-            display: block;
-            margin-left: auto;
-            margin-right: auto
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="container">
-
-        <div class="box">
-            <h1 style="text-align: center;" class="content-head">Appátio</h1>
-            <img class="logo" src="{% static 'img/logo.png' %}" alt="Logo" height="96" width="96">
-            <form class="pure-form pure-form-aligned" method="POST">
-                {% csrf_token %}
-                <fieldset>
-                    {{ form.non_field_errors }}
-                    <div class="pure-control-group">
-                        {{ form.as_p }}
-                    </div>
-                    <button type="submit" class="pure-button pure-input-1 pure-button-primary">Entrar</button>
-                </fieldset>
-                <p><a href="#">Esqueci minha senha</a></p>
-                <p><a href="{% url 'usuarios:cadastrar' %}">Cadastrar usuário</a></p>
-            </form>
+<img class="logo" src="{% static 'img/logo.png' %}" alt="Logo" height="96" width="96">
+<form class="pure-form pure-form-aligned" method="POST">
+    {% csrf_token %}
+    <fieldset>
+        {{ form.non_field_errors }}
+        <div class="pure-control-group">
+            {{ form.as_p }}
         </div>
+        <button type="submit" class="pure-button pure-input-1 pure-button-primary">Entrar</button>
+    </fieldset>
+    <p><a href="#">Esqueci minha senha</a></p>
+    <p><a href="{% url 'usuarios:cadastrar' %}">Cadastrar usuário</a></p>
+</form>
 
-    </div>
-
-</body>
-
-</html>
+{% endblock %}

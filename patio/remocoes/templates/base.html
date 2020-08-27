@@ -27,7 +27,7 @@
             <a href="{% url 'remocoes:home' %}" class="pure-menu-heading custom-brand">
                 APPátio
                 {% if user.is_authenticated %}
-                    - {{ user.first_name }} {{ user.last_name }}
+                    - {{ user.name }}
                 {% endif %}
             </a>
             <a href="#" class="custom-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>

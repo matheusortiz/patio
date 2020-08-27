@@ -1,23 +1,14 @@
-<!doctype html>
+{% extends 'base_login.html' %}
 
-{% load static %}
+{% block box %}
 
-<html lang="pt-br">
-
-<head>
-    <meta charset="utf-8">
-    <title>Sistema de Gerenciamento de Pátios</title>
-    <link rel="stylesheet" href="{% static 'css/pure-min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-
-</head>
-
-<body>
-    <h1 style="text-align: center;" class="content-head">Appátio</h1>
     <div class="pure-g-r content-ribbon">
-        <h2>Cadastro de Usuário</h2>
-        <form class="pure-form pure-form-stacked" method="POST">
+        <h2 style="text-align: center;">Cadastro de Usuário</h2>
+        <form class="pure-form pure-form-aligned" method="POST">
             {% csrf_token %}
+            {% if success %}
+                <p>Solicitação de cadastro realizada com sucesso. Aguarde a autorização do administrador do sistema.</p>
+            {% endif %}
             <fieldset>
                 {{ form.non_field_errors }}
                 {% for field in form %}
@@ -29,11 +20,10 @@
                 {% endfor %}
                 <div class="pure-controls">
                     <button type="submit" class="pure-button pure-button-primary">Cadastrar</button>
+                    <p><a href="{% url 'remocoes:home' %}">Voltar </a></p>
                 </div>
             </fieldset>
         </form>
     </div>
 
-</body>
-
-</html>
+{% endblock %}

@@ -1,9 +1,6 @@
 from django.db import models
 from datetime import datetime
 
-# Create your models here.
-
-
 class Patio(models.Model):
     descricao = models.CharField('Descrição', max_length=300)
     observacoes = models.TextField('Observações', blank=True)

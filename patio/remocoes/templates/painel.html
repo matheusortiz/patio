@@ -6,10 +6,12 @@
     <h2>Painel do Usuário</h2>
     <div class="pure-u-2-3">
         <div class="inner">
-            <p><strong>Usuário:</strong> {{ user }}</p>
-            <p><strong>Nome:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+            <p><strong>Usuário:</strong> {{ user.username }}</p>
+            <p><strong>Nome:</strong> {{ user.name }} </p>
             <p><strong>Email:</strong> {{ user.email }}</p>
-            <p><a href="{% url 'usuarios:editar' %}">Editar conta</a></p>
+            <p><strong>Posto/Graduação:</strong> {{ user.graduacao }}</p>
+            <p><strong>OPM:</strong> {{ user.opm }}</p>
+            <p><a href="{% url 'usuarios:editar' %}">Editar informações</a></p>
             <p><a href="{% url 'usuarios:senha' %}">Alterar senha</a></p>
         </div>
     </div>

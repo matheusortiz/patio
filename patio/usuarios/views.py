@@ -5,16 +5,15 @@ from .forms import RegistrarUsuarioForm, EditarUsuarioForm
 from django.contrib.auth.decorators import login_required
 
 def cadastrar(request):
+    contexto = {}
     if request.method == 'POST':
         form = RegistrarUsuarioForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect(settings.LOGIN_URL)
+            contexto['success'] = True
     else:
         form = RegistrarUsuarioForm()
-    contexto = {
-        'form': form
-    }
+    contexto['form'] = form
     return render(request, 'cadastro.html', contexto)
 
 
