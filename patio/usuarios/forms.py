@@ -1,8 +1,33 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
+from patio.utils import generate_hash_key
+from remocoes.forms import send_mail
+from .models import PasswordReset
 
 User = get_user_model()
+
+class PasswordResetForm(forms.Form):
+    email = forms.EmailField(label='Email')
+
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        if User.objects.filter(email=email).exists():
+            return email
+        raise forms.ValidationError('Email inválido.')
+
+    def salvar(self):
+        user = User.objects.get(email=self.cleaned_data['email'])
+        chave = generate_hash_key(user.username)
+        reset = PasswordReset(chave=chave, user=user)
+        reset.save()
+        msg = 'Para recuperar a senha acesso o link: http://127.0.0.1:8000/contas/senha_reset_email/' + reset.chave
+        assunto = 'Criar nova senha no AppPátio'
+        contexto = {
+            'reset': reset,
+        }
+        send_mail(assunto, msg, contexto, [user.email])
+
 
 class RegistrarUsuarioForm(forms.ModelForm):
 

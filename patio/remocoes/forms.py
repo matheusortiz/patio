@@ -11,7 +11,7 @@ class Suporte(forms.Form):
 
     def send_mail(self):
         assunto = 'App Patio: Suporte de Sistema'
-        mensagem = 'Nome: %(nome)s;E-mail: %(email)s;%(mensagem)s'
+        mensagem = 'Nome: %(nome)s\n\nEmail: %(email)s\n\nMensagem: %(mensagem)s'
         contexto = {
              'nome': self.cleaned_data['nome'],
              'email': self.cleaned_data['email'],

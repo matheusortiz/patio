@@ -11,3 +11,9 @@ db.sqlite3
 importacao
 media
 migrations
+gunicorn.conf
+nginx.conf
+start.sh
+supervisor.conf
+xampp.sh
+

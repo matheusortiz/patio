@@ -62,7 +62,5 @@ def suporte(request):
             form = Suporte()
     else:
         form = Suporte()
-
     contexto['form'] = form
-
     return render(request, 'suporte.html', contexto)

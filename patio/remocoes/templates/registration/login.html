@@ -14,7 +14,7 @@
         </div>
         <button type="submit" class="pure-button pure-input-1 pure-button-primary">Entrar</button>
     </fieldset>
-    <p><a href="#">Esqueci minha senha</a></p>
+    <p><a href="{% url 'usuarios:reset' %}">Esqueci minha senha</a></p>
     <p><a href="{% url 'usuarios:cadastrar' %}">Cadastrar usuário</a></p>
 </form>
 
