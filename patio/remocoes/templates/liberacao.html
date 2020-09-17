@@ -1,16 +1,37 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block container %}
 
-<html>
+<h2>Liberações</h2>
+<div class="pure-control-group">
+    <h3><a class="pure-button pure-button-primary" href="{% url 'remocoes:liberacao_cadastro' %}">Nova liberação</a></h3>
+</div>
+<table class="pure-table pure-table-bordered">
+    <thead>
+        <tr>
+            <th>Processo</th>
+            <th>Data de Liberação</th>
+            <th>Obs.</th>
+            <th>Detalhes</th>
+        </tr>
+    </thead>
 
-<body>
-
-    <h1>Página Liberação</h1>
-
-</body>
-
-</html>
+    <tbody>
+        {% for liberacao in liberacoes %}
+        <tr>
+            <td>{{ liberacao.numero_processo }}</td>
+            <td>{{ liberacao.data_liberacao }}</td>
+            <td>{{ liberacao.observacoes }}</td>
+            <td>
+                <a href="{% url 'remocoes:liberacao_detalhe' liberacao.id %}"> <img src="{% static 'icon/detalhe32.png' %}" alt="Detalhes da Liberação" height="32" width="32"> </a>
+            </td>
+        </tr>
+        {% empty %}
+        <p> Nenhuma remoção liberação. </p>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock %}
-

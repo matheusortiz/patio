@@ -7,9 +7,9 @@
     <div class="pure-g-r content-ribbon" id="remocao_form">
         
         <div class="pure-u-1">
-            <h2> Nova Remoção </h2>
+            <h2> Novo Pátio </h2>
             {% if success %}
-            <h3> Remoção cadastrada com sucesso! </h3>
+            <h3> Pátio cadastrado com sucesso! </h3>
             {% endif %}
             <form action="#" class="pure-form pure-form-aligned" method="POST">
                 {% csrf_token %}
@@ -23,7 +23,7 @@
                     {% endfor %}
                     <div class="pure-controls">
                         <button class="pure-button">Cadastrar</button>
-                        <a class="pure-button" href="{% url 'remocoes:remocao' %}">Cancelar</a>
+                        <a class="pure-button" href="{% url 'remocoes:patio' %}">Cancelar</a>
                     </div>
                 </fieldset>
             </form>

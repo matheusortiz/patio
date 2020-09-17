@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+<html>
+
+<body>
+
+    <h2>
+        <strong>Processo: </strong>{{ liberacao.numero_processo}}
+    </h2>
+
+    <table class="pure-table pure-table-bordered">
+        <tbody>
+            <tr>
+                <td><strong>Data da Liberação</strong></td>
+                <td>{{ liberacao.data_liberacao }}</td>
+            </tr>
+            <tr>
+                <td><strong>Observações</strong></td>
+                <td>{{ liberacao.observacoes }}</td>
+            </tr>
+            <tr>
+                <td><strong>Documentos de Remoção</strong></td>
+                <td>
+                    {{ liberacao.documento_liberacao.url }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
+
+{% endblock %}

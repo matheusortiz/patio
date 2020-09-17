@@ -1,16 +1,39 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block container %}
 
-<html>
+<h2>Setores</h2>
 
-<body>
+<div class="pure-control-group">
+    <h3><a class="pure-button pure-button-primary" href="{% url 'remocoes:setor_cadastro' %}">Novo setor</a></h3>
+</div>
 
-    <h1>Página Setor</h1>
+<table class="pure-table pure-table-bordered">
+    <thead>
+        <tr>
+            <th>Descrição</th>
+            <th>Coluna</th>
+            <th>Fileira</th>
+            <th>Patio</th>
+            <th>Obs.</th>
+        </tr>
+    </thead>
 
-</body>
-
-</html>
+    <tbody>
+        {% for setor in setores %}
+        <tr>
+            <td>{{ setor.descricao }}</td>
+            <td>{{ setor.coluna }}</td>
+            <td>{{ setor.fileira }}</td>
+            <td>{{ setor.patio }}</td>
+            <td>{{ setor.observacoes }}</td>
+        </tr>
+        {% empty %}
+            <p> Nenhum setor disponível. </p>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock %}
-

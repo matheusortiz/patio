@@ -1,16 +1,33 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block container %}
 
-<html>
+<h2>Pátios</h2>
 
-<body>
+<div class="pure-control-group">
+    <h3><a class="pure-button pure-button-primary" href="{% url 'remocoes:patio_cadastro' %}">Novo pátio</a></h3>
+</div>
 
-    <h1>Página Pátio</h1>
+<table class="pure-table pure-table-bordered">
+    <thead>
+        <tr>
+            <th>Descrição</th>
+            <th>Obs.</th>
+        </tr>
+    </thead>
 
-</body>
-
-</html>
+    <tbody>
+        {% for patio in patios %}
+        <tr>
+            <td>{{ patio.descricao }}</td>
+            <td>{{ patio.observacoes }}</td>
+        </tr>
+        {% empty %}
+            <p> Nenhum pátio disponível. </p>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock %}
-
