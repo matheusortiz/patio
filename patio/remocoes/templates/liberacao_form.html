@@ -11,7 +11,7 @@
             {% if success %}
             <h3> Liberação cadastrada com sucesso! </h3>
             {% endif %}
-            <form action="#" class="pure-form pure-form-aligned" method="POST">
+            <form action="#" class="pure-form pure-form-aligned" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <fieldset>
                     {% for field in form %}

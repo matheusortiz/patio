@@ -15,6 +15,10 @@
     <table class="pure-table pure-table-bordered">
         <tbody>
             <tr>
+                <td><strong>Número do Processo</strong></td>
+                <td>{{ liberacao.numero_processo }}</td>
+            </tr>
+            <tr>
                 <td><strong>Data da Liberação</strong></td>
                 <td>{{ liberacao.data_liberacao }}</td>
             </tr>
@@ -23,9 +27,9 @@
                 <td>{{ liberacao.observacoes }}</td>
             </tr>
             <tr>
-                <td><strong>Documentos de Remoção</strong></td>
+                <td><strong>Documentos de Liberação</strong></td>
                 <td>
-                    {{ liberacao.documento_liberacao.url }}
+                    <a href="{{ liberacao.documento_liberacao.url }}">{{ liberacao.documento_liberacao.url }}</a>
                 </td>
             </tr>
         </tbody>

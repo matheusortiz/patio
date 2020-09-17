@@ -58,11 +58,9 @@ def remocao_cadastro(request):
     if request.method == 'POST':
         form = CadastroRemocaoForm(request.POST, request.FILES, request.user)
         if form.is_valid():
-            context['is_valid'] = True
-            form = CadastroRemocaoForm(request.POST)
-            if form.save():
-                context['success'] = True
-                form = CadastroRemocaoForm()
+            context['success'] = True
+            form.save()
+            form = CadastroRemocaoForm()
     else:
         form = CadastroRemocaoForm()
     context['form'] = form
@@ -89,13 +87,11 @@ def liberacao_detalhe(request, id):
 def liberacao_cadastro(request):
     context = {}
     if request.method == 'POST':
-        form = CadastroLiberacaoForm(request.POST, request.FILES, request.user)
+        form = CadastroLiberacaoForm(request.POST, request.FILES)
         if form.is_valid():
-            context['is_valid'] = True
-            form = CadastroLiberacaoForm(request.POST)
-            if form.save():
-                context['success'] = True
-                form = CadastroLiberacaoForm()
+            context['success'] = True
+            form.save()
+            form = CadastroLiberacaoForm()
     else:
         form = CadastroLiberacaoForm()
     context['form'] = form

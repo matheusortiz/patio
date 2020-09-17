@@ -50,9 +50,9 @@ class Liberacao(models.Model):
 
     def __str__(self):
         if self.observacoes == '':
-            return str(self.data_liberacao.strftime('%d/%m/%Y'))
+            return self.numero_processo + ' - ' + str(self.data_liberacao.strftime('%d/%m/%Y'))
         else:
-            return str(self.data_liberacao.strftime('%d/%m/%Y')) + ' - ' + self.observacoes
+            return self.numero_processo + ' - ' + str(self.data_liberacao.strftime('%d/%m/%Y')) + ' - ' + self.observacoes
 
 class Remocao(models.Model):
 
@@ -70,7 +70,7 @@ class Remocao(models.Model):
     cor = models.CharField('Cor', choices=utils.CORES, max_length=300)
     chassi = models.CharField('Chassi', max_length=300, blank=True)
     observacoes = models.TextField('Observações', blank=True, null=True)
-    documento_remocao = models.FileField(upload_to='doc_remocao', verbose_name='Documento de Remoção', null=True, blank=True)
+    documento_remocao = models.FileField(upload_to='doc_remocao', verbose_name='Documento de Remoção')
     bloqueio_judicial = models.BooleanField('BJ', blank=True)
     liberacao = models.ForeignKey(Liberacao, on_delete=models.SET_NULL, null=True, blank=True)
     criado_em = models.DateTimeField('Criado em', auto_now_add=True, null=True)

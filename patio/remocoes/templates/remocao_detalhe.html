@@ -70,14 +70,14 @@
             <tr>
                 <td><strong>Documentos de Remoção</strong></td>
                 <td>
-                    {{ remocao.documento_remocao.url }}
+                    <a href="{{ remocao.documento_remocao.url }}">{{ remocao.documento_remocao }}</a>
                 </td>
             </tr>
             {% if remocao.liberacao %}
             <tr>
                 <td><strong>Documentos de Liberação</strong></td>
                 <td>
-                    {{ remocao.liberacao }}
+                    <a href="{{ remocao.liberacao.documento_liberacao.url }}">{{ remocao.liberacao }}</a>
                 </td>
             </tr>
             {% endif %}

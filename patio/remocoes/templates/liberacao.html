@@ -25,7 +25,7 @@
             <td>{{ liberacao.data_liberacao }}</td>
             <td>{{ liberacao.observacoes }}</td>
             <td>
-                <a href="{% url 'remocoes:liberacao_detalhe' liberacao.id %}"> <img src="{% static 'icon/detalhe32.png' %}" alt="Detalhes da Liberação" height="32" width="32"> </a>
+                <center><a href="{% url 'remocoes:liberacao_detalhe' liberacao.id %}"> <img src="{% static 'icon/detalhe32.png' %}" alt="Detalhes da Liberação" height="32" width="32"> </a></center>
             </td>
         </tr>
         {% empty %}
