@@ -18,6 +18,8 @@
             <th>Fileira</th>
             <th>Patio</th>
             <th>Obs.</th>
+            <th>Alterar</th>
+            <th>Excluir</th>
         </tr>
     </thead>
 
@@ -29,6 +31,10 @@
             <td>{{ setor.fileira }}</td>
             <td>{{ setor.patio }}</td>
             <td>{{ setor.observacoes }}</td>
+            <td>
+                <center><a href="{% url 'remocoes:setor_exclui' remocao.id %}"> <img src="{% static 'icon/detalhe32.png' %}" alt="Detalhes da Remoção" height="32" width="32"> </a></center>
+            </td>
+            <td></td>
         </tr>
         {% empty %}
             <p> Nenhum setor disponível. </p>

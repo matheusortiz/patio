@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+<html>
+
+<body>
+
+    <h2>
+        <strong>Setor: </strong> {{ setor.descricao}}
+    </h2>
+
+    <table class="pure-table pure-table-bordered">
+        <tbody>
+            <tr>
+                <td><strong>Descrição</strong></td>
+                <td>{{ setor.descricao }}</td>
+            </tr>
+            <tr>
+                <td><strong>Coluna</strong></td>
+                <td>{{ setor.coluna }}</td>
+            </tr>
+            <tr>
+                <td><strong>Fileira</strong></td>
+                <td>{{ setor.fileira }}</td>
+            </tr>
+            <tr>
+                <td><strong>Patio</strong></td>
+                <td>{{ setor.patio.descricao }}</td>
+            </tr>
+            <tr>
+                <td><strong>Obs.</strong></td>
+                <td>{{ setor.observacoes }}</td>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
+
+{% endblock %}

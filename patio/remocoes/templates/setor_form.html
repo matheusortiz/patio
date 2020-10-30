@@ -11,6 +11,9 @@
             {% if success %}
             <h3> Setor cadastrado com sucesso! </h3>
             {% endif %}
+            {% if altered %}
+            <h3> Setor atualizado com sucesso! </h3>
+            {% endif %}
             <form action="#" class="pure-form pure-form-aligned" method="POST">
                 {% csrf_token %}
                 <fieldset>

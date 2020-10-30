@@ -58,6 +58,7 @@ class Remocao(models.Model):
 
     plaqueta = models.IntegerField('Plaqueta')
     placa = models.CharField('Placa', max_length=7, blank=True)
+    cidade = models.CharField('Cidade', max_length=300, blank=True, null=True)
     uf = models.CharField('UF', choices=utils.UF, max_length=2 , default='PR', blank=True)
     data_vistoria = models.DateField('Data de Vistoria')
     patio = models.ForeignKey(Patio, on_delete=models.CASCADE)
@@ -68,9 +69,13 @@ class Remocao(models.Model):
     tipo = models.CharField('Tipo', choices=utils.TIPOS, default='Automóvel', max_length=300)
     combustivel = models.CharField('Combustível', choices=utils.COMBUSTIVEIS, default='G', max_length=300, blank=True, null=True)
     cor = models.CharField('Cor', choices=utils.CORES, max_length=300)
+    ano = models.IntegerField('Ano', blank=True, null=True)
     chassi = models.CharField('Chassi', max_length=300, blank=True)
+    trv = models.IntegerField('Nº TRV')
+    motivo = models.TextField('Motivo de recolhimento', blank=True, null=True)
     observacoes = models.TextField('Observações', blank=True, null=True)
     documento_remocao = models.FileField(upload_to='doc_remocao', verbose_name='Documento de Remoção')
+    chave = models.BooleanField('Com chave', blank=True)
     bloqueio_judicial = models.BooleanField('BJ', blank=True)
     liberacao = models.ForeignKey(Liberacao, on_delete=models.SET_NULL, null=True, blank=True)
     criado_em = models.DateTimeField('Criado em', auto_now_add=True, null=True)
@@ -79,6 +84,10 @@ class Remocao(models.Model):
 
     def __str__(self):
         return self.placa
+
+    def delete(self, *args, **kwargs):
+        self.documento_remocao.delete()
+        super().delete(*args, **kwargs)
     
     class Meta:
         verbose_name = 'Remoção'

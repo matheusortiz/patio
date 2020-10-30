@@ -3,11 +3,12 @@ from .models import Remocao, Patio, Setor, Liberacao
 from .forms import Suporte, CadastroRemocaoForm, CadastroSetorForm, CadastroPatioForm, CadastroLiberacaoForm
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+
 
 @login_required
 def inicial(request):
     return render(request, 'inicial.html')
+
 
 
 @login_required
@@ -19,21 +20,58 @@ def setor(request):
     return render(request, 'setor.html', context)
 
 
+
 @login_required
 def setor_cadastro(request):
     context = {}
     if request.method == 'POST':
         form = CadastroSetorForm(request.POST)
         if form.is_valid():
-            context['is_valid'] = True
-            form = CadastroSetorForm(request.POST)
-            if form.save():
-                context['success'] = True
-                form = CadastroSetorForm()
+            context['success'] = True
+            form.save()
+            form = CadastroSetorForm()
     else:
         form = CadastroSetorForm()
     context['form'] = form
     return render(request, 'setor_form.html', context)
+
+
+
+@login_required     
+def setor_detalhe(request, id):
+    setor = get_object_or_404(Setor, id=id)
+    context = {
+        'setor': setor
+        }
+    return render(request, 'setor_detalhe.html',context)
+
+
+
+@login_required
+def setor_exclui(request, id):
+    context = {}
+    if request.method == 'POST':
+        setor = Setor.objects.get(id=id)
+        setor.delete
+        context['deleted'] = True
+    return render(request, 'setor.html', context)
+
+
+@login_required
+def setor_altera(request, id):
+    context = {}
+    setor = Setor.objects.get(id=id)
+    if request.method == 'POST':
+        form = CadastroSetorForm(request.POST, instance=setor)
+        if form.is_valid():
+            context['altered'] = True
+            form.save()
+            form = CadastroSetorForm()
+    else:
+        form = CadastroSetorForm(instance=setor)
+    context['form'] = form
+    return render(request, 'setor_form.html', context)
+
 
 
 @login_required
@@ -44,6 +82,8 @@ def remocao(request):
     }
     return render(request, 'remocao.html', context)
 
+
+
 @login_required     
 def remocao_detalhe(request, id):
     remocao = get_object_or_404(Remocao, id=id)
@@ -51,6 +91,8 @@ def remocao_detalhe(request, id):
         'remocao': remocao
         }
     return render(request, 'remocao_detalhe.html', context)
+
+
 
 @login_required
 def remocao_cadastro(request):
@@ -67,6 +109,7 @@ def remocao_cadastro(request):
     return render(request, 'remocao_form.html', context)
 
 
+
 @login_required
 def liberacao(request):
     liberacoes = Liberacao.objects.all()
@@ -75,6 +118,8 @@ def liberacao(request):
     }
     return render(request, 'liberacao.html', context)
 
+
+
 @login_required     
 def liberacao_detalhe(request, id):
     liberacao = get_object_or_404(Liberacao, id=id)
@@ -82,6 +127,8 @@ def liberacao_detalhe(request, id):
         'liberacao': liberacao
         }
     return render(request, 'liberacao_detalhe.html', context)
+
+
 
 @login_required
 def liberacao_cadastro(request):
@@ -98,6 +145,7 @@ def liberacao_cadastro(request):
     return render(request, 'liberacao_form.html', context)
 
 
+
 @login_required
 def patio(request):
     patios = Patio.objects.all()
@@ -105,6 +153,7 @@ def patio(request):
         'patios' : patios
     }
     return render(request, 'patio.html', context)
+
 
 
 @login_required
@@ -122,6 +171,7 @@ def patio_cadastro(request):
         form = CadastroPatioForm()
     context['form'] = form
     return render(request, 'patio_form.html', context)
+
 
 
 @login_required
